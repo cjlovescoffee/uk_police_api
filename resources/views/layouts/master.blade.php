@@ -6,18 +6,24 @@
     <title>UK Police Service</title>
     <meta name="description" content="A data visualisation service for the United Kingdom's Police force API">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/app.css" />
   </head>
   <body>
     <header>
       <div class="container">
-        <a href="{{ route('home') }}">Home</a>
-        <a href="{{ route('forces') }}">Forces</a>
+        <ul class="nav">
+          <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ route('forces') }}">Forces</a></li>
+        </ul>
       </div>
     </header>
-    <main>
+    <main class="flex-fill">
       @yield('main')
     </main>
     <footer>
+      <div class="container">
+        <p>Application designed and developed by Christopher West</p>
+      </div>
     </footer>
   </body>
 </html>

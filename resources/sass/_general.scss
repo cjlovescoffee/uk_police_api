@@ -1,11 +1,29 @@
 html {
   height: 100%;
   overflow-x: hidden;
-
 }
 
 body {
   display: flex;
   flex-direction: column;
   min-height: 100%;
+}
+
+body > header {
+  @extend .bg-primary;
+  a {
+    @extend .text-white;
+  }
+}
+
+body > footer {
+  @extend .bg-dark;
+  color: $white;
+  padding: 16px 0;
+  a {
+    @extend .text-white;
+  }
+  *:last-of-type {
+    margin-bottom: 0;
+  }
 }
