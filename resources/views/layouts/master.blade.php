@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/app.css" />
   </head>
   <body>
-    <header>
+    <header class="show">
       <div class="container">
         <ul class="nav">
           <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
@@ -25,5 +25,6 @@
         <p>Application designed and developed by Christopher West</p>
       </div>
     </footer>
+    <script src="/js/app.js"></script>
   </body>
 </html>

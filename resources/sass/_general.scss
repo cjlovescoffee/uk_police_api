@@ -1,3 +1,7 @@
+:root {
+  --header-height: 40px;
+}
+
 html {
   height: 100%;
   overflow-x: hidden;
@@ -11,18 +15,37 @@ body {
 
 body > header {
   @extend .bg-primary;
+  position: fixed;
+  transition: $transition-base;
+  width: 100%;
+  z-index: 100;
+
   a {
     @extend .text-white;
   }
+}
+
+body > header.show {
+  transform: translateY(0%);
+}
+
+body > header.hide {
+  transform: translateY(-100%);
+}
+
+body > main {
+  margin-top: var(--header-height);
 }
 
 body > footer {
   @extend .bg-dark;
   color: $white;
   padding: 16px 0;
+
   a {
     @extend .text-white;
   }
+
   *:last-of-type {
     margin-bottom: 0;
   }

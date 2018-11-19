@@ -15818,6 +15818,10 @@ readers do not read off random characters that represent icons */
   font-weight: 900;
 }
 
+:root {
+  --header-height: 40px;
+}
+
 html {
   height: 100%;
   overflow-x: hidden;
@@ -15832,6 +15836,28 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   min-height: 100%;
+}
+
+body > header {
+  position: fixed;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+  z-index: 100;
+}
+
+body > header.show {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+}
+
+body > header.hide {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+body > main {
+  margin-top: var(--header-height);
 }
 
 body > footer {
