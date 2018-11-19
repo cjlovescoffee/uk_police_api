@@ -13,9 +13,9 @@ A data visualisation service for the United Kingdom's Police force API
 * [Composer](http://getcomposer.org)
 
 ## Installation
-1. Run `composer install` from the root to install dependencies
-2. Run `npm install` from the root to install dependencies
-3. Update environment variables in `.env`  file:
+* Run `composer install` from the root to install dependencies
+* Run `npm install` from the root to install dependencies
+* Update environment variables in `.env`  file:
   * `DB_NAME` - Database name
   * `DB_USER` - Database user
   * `DB_PASSWORD` - Database password
