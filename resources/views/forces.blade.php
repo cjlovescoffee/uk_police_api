@@ -7,15 +7,11 @@
 @section('main')
   <section>
     <div class="container">
-      <div class="row">
+      <ul>
         @foreach($forces as $force)
-          <pre>
-            @php
-              print_r($force);
-            @endphp
-          </pre>
+          <li><a href="/forces/{{$force['id']}}">{{$force['name']}}</a></li>
         @endforeach
-      </div>
+      </ul>
     </div>
   </section>
 @endsection

@@ -35,6 +35,8 @@ body > header.hide {
 
 body > main {
   margin-top: var(--header-height);
+  padding-bottom: 16px;
+  padding-top: 16px;
 }
 
 body > footer {

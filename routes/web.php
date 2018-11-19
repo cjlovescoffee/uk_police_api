@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('/forces', function () {
     return view('forces');
 })->name('forces');
+
+Route::get('/forces/{id}', function ($id) {
+    return view('force', ['id' => $id]);
+});
