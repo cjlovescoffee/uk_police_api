@@ -9,6 +9,10 @@
   </head>
   <body>
     <header>
+      <div class="container">
+        <a href="{{ route('home') }}">Home</a>
+        <a href="{{ route('forces') }}">Forces</a>
+      </div>
     </header>
     <main>
       @yield('main')

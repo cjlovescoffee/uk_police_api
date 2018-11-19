@@ -13,4 +13,8 @@
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
+
+Route::get('/forces', function () {
+    return view('forces');
+})->name('forces');
