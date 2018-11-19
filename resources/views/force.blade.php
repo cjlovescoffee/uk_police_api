@@ -25,4 +25,21 @@ $force = $POLICE->force($id);
 
     </div>
   </section>
+
+  @php
+    $neighbourhoods = $POLICE->neighbourhoods($id);
+  @endphp
+
+  @if($neighbourhoods)
+  <section>
+    <div class="container">
+      <ul>
+        @foreach($neighbourhoods as $neighbourhood)
+          <li><a href="/neighbourhoods/{{$neighbourhood['id']}}">{{$neighbourhood['name']}}</a></li>
+        @endforeach
+      </ul>
+    </div>
+  </section>
+  @endif
+
 @endsection
