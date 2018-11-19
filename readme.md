@@ -16,10 +16,10 @@ A data visualisation service for the United Kingdom's Police force API
 * Run `composer install` from the root to install dependencies
 * Run `npm install` from the root to install dependencies
 * Update environment variables in `.env`  file:
-  * `DB_NAME` - Database name
-  * `DB_USER` - Database user
-  * `DB_PASSWORD` - Database password
-  * `DB_HOST` - Database host
+    * `DB_NAME` - Database name
+    * `DB_USER` - Database user
+    * `DB_PASSWORD` - Database password
+    * `DB_HOST` - Database host
 
 ## Development
 * Run `npm run watch` from the root to compile and serve
