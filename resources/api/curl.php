@@ -1,6 +1,6 @@
 <?php
 
-Class Curl {
+class Curl {
   protected $baseUrl = null;
   public $curl = null;
 

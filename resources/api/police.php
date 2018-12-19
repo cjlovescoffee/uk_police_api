@@ -2,11 +2,15 @@
 require_once("curl.php");
 
 Class Police extends Curl {
+  public $first_updated;
+  public $last_updated;
 
   public function __construct() {
     parent::__construct();
     $this->baseUrl = "https://data.police.uk/api/";
     $this->setOpt(CURLOPT_RETURNTRANSFER, true);
+    $this->first_updated = new DateTime("2015-11");
+    $this->last_updated = new DateTime($this->lastUpdated()['date']);
   }
 
   /** Get all forces
@@ -86,6 +90,18 @@ Class Police extends Curl {
     );
   }
 
+  /** Get neighbourhood boundary
+    * @param string force
+    * @param string neighbourhood
+    * @return array|false
+    */
+
+  public function neighbourhoodBoundary($force, $neighbourhood) {
+    return $this->call(
+      sprintf('%s/%s/boundary', urlencode($force), urlencode($neighbourhood))
+    );
+  }
+
   /** Locate neighbourhood by latitude and longitude
     * @param float latitude
     * @param float longitude
@@ -95,6 +111,34 @@ Class Police extends Curl {
   public function locateNeighbourhood($latitude, $longitude) {
     return $this->call(
       sprintf('locate-neighbourhood?q=%s,%s', $latitude, $longitude)
+    );
+  }
+
+  /** Get stop & searches by force and date
+    * @param string force
+    * @param string date
+    * @return array|false
+    */
+
+  public function stopAndSearchByForceAndDate($force, $date) {
+    return $this->call(
+      sprintf('stops-force?force=%s&date=%s', urlencode($force), urlencode($date))
+    );
+  }
+
+  public function CrimeDates() {
+    return $this->call(
+      sprintf('crimes-street-dates')
+    );
+  }
+
+  /** Get last updated month
+    * @return DateTime|false
+    */
+
+  public function lastUpdated() {
+    return $this->call(
+      sprintf('crime-last-updated')
     );
   }
 }

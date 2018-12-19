@@ -1,6 +1,6 @@
 <?php
 
-Class LocalDB {
+class LocalDB {
   protected $connection = false;
   private $statement;
 
@@ -62,12 +62,10 @@ Class LocalDB {
   }
 
   public function allresults() {
-    $this->execute("", false);
     return $this->statement->fetchAll(PDO::FETCH_ASSOC);
   }
 
   public function singleresult() {
-    $this->execute("", false);
     return $this->statement->fetch(PDO::FETCH_ASSOC);
   }
 

@@ -1,3 +1,7 @@
+@php
+  require_once('../resources/api/policedb.php');
+@endphp
+
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
   <head>
@@ -13,7 +17,7 @@
       <div class="container">
         <ul class="nav">
           <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{ route('forces') }}">Forces</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ route('reset') }}">Reset</a></li>
         </ul>
       </div>
     </header>
@@ -22,6 +26,9 @@
     </main>
     <footer>
       <div class="container">
+        <h5 class="mb-3">UK Police API</h5>
+        <p>This is a simple data visualisation application which consumes the UK Police data API, available at <a href="https://data.police.uk/">https://data.police.uk/</a></p>
+        <p>The Police API records begin in {{ $policedb->first_updated->format('F Y') }}. They were last updated in {{ $policedb->last_updated->format('F Y') }}</p>
         <p>Application designed and developed by Christopher West</p>
       </div>
     </footer>

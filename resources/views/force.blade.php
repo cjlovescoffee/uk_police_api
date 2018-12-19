@@ -1,45 +1,41 @@
 @extends('layouts.master')
-
 @php
-require_once('../resources/api/police.php');
-$POLICE = new Police();
-$force = $POLICE->force($id);
+require_once('../resources/api/policedb.php');
+$policedb = new PoliceDB();
+$policedb->updateSearches($force);
+$current = $policedb->force($force);
+$neighbourhoods = $policedb->neighbourhoods($force);
+$stopsearch = $policedb->stopAndSearchByForceAndDate($force, "2018-10");
 @endphp
-
 @section('main')
   <section>
     <div class="container">
-      <h1>{{$force['name']}}</h1>
-
-      @if($force['description'])
-        <p>{!!$force['description']!!}</p>
-      @endif
-
-      @if($force['url'])
-        <p>Website: <a href="{{$force['url']}}" target="_blank">{{$force['url']}}</a></p>
-      @endif
-
-      @if($force['telephone'])
-        <p>Telephone: <a href="tel:{{$force['telephone']}}">{{$force['telephone']}}</a></p>
-      @endif
-
+      <h1>{{$current['name']}}</h1>
     </div>
   </section>
-
-  @php
-    $neighbourhoods = $POLICE->neighbourhoods($id);
-  @endphp
 
   @if($neighbourhoods)
   <section>
     <div class="container">
       <ul>
         @foreach($neighbourhoods as $neighbourhood)
-          <li><a href="/neighbourhoods/{{$neighbourhood['id']}}">{{$neighbourhood['name']}}</a></li>
+          <li><a href="/forces/{{$force}}/{{$neighbourhood['id']}}">{!!$neighbourhood['name']!!}</a></li>
         @endforeach
       </ul>
     </div>
   </section>
   @endif
+
+    @foreach($stopsearch as $obj)
+<pre>
+      {{ print_r($obj) }}
+    </pre>
+      @php
+
+      @endphp
+
+    @endforeach
+
+
 
 @endsection
