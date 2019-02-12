@@ -9,7 +9,7 @@ Class Police extends Curl {
     parent::__construct();
     $this->baseUrl = "https://data.police.uk/api/";
     $this->setOpt(CURLOPT_RETURNTRANSFER, true);
-    $this->first_updated = new DateTime("2015-11");
+    $this->first_updated = new DateTime("2017-01");
     $this->last_updated = new DateTime($this->lastUpdated()['date']);
   }
 

@@ -28,7 +28,7 @@
       <div class="container">
         <h5 class="mb-3">UK Police API</h5>
         <p>This is a simple data visualisation application which consumes the UK Police data API, available at <a href="https://data.police.uk/">https://data.police.uk/</a></p>
-        <p>The Police API records begin in {{ $policedb->first_updated->format('F Y') }}. They were last updated in {{ $policedb->last_updated->format('F Y') }}</p>
+        <p>This application uses data from {{ $policedb->first_updated->format('F Y') }} until now. The data was last updated in {{ $policedb->last_updated->format('F Y') }}</p>
         <p>Application designed and developed by Christopher West</p>
       </div>
     </footer>
