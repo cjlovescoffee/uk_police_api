@@ -3,8 +3,8 @@ A data visualisation service for the United Kingdom's Police force API
 
 ## Features
 * [Laravel](https://laravel.com/docs) for routing and much more
-* [Bootstrap 4](https://getbootstrap.com/) for a
-* [D3](https://d3js.org) for data visualisation
+* [Bootstrap 4](https://getbootstrap.com/) Framework
+* [Chart.js](https://www.chartjs.org/) and [DataTables](https://datatables.net/) for data visualisation
 * Environment variables with [Dotenv](https://github.com/vlucas/phpdotenv)
 
 ## Prerequisites
