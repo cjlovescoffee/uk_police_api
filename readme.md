@@ -1,5 +1,5 @@
 # UK Police Service
-A data visualisation service for the United Kingdom's Police force API
+A data visualisation service for the United Kingdom's Police force API. Requires a MySQL database.
 
 ## Features
 * [Laravel](https://laravel.com/docs) for routing and much more
